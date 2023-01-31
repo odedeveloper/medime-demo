@@ -2,7 +2,6 @@ import 'package:flutter_config/flutter_config.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 
 import 'exports.dart';
-import 'package:platform_device_id/platform_device_id.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
