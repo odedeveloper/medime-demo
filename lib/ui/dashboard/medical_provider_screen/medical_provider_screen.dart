@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:medical360_oth/exports.dart';
 import 'package:medical360_oth/models/app_models.dart';
 import 'package:medical360_oth/ui/dashboard/medical_provider_screen/apps_controller.dart';
+import 'package:medical360_oth/ui/dashboard/medical_provider_screen/webview_apps/ios_webapp.dart';
 import 'package:medical360_oth/utils/constant.dart';
 
 class MedicalProviderScreen extends GetWidget<AppsController> {
@@ -127,7 +128,7 @@ class AppCard extends StatelessWidget {
     return InkWell(
       onTap: () async {
         if (Platform.isIOS) {
-          Get.to(PaymentScreen());
+          Get.to(DigiHealthApp());
         } else {
           if (app.isInstalled) {
             await LaunchApp.openApp(
@@ -142,7 +143,7 @@ class AppCard extends StatelessWidget {
         child: Column(
           children: [
             Opacity(
-              opacity: app.isInstalled ? 1 : 0.4,
+              opacity: (app.isInstalled || Platform.isIOS)? 1 : 0.4,
               child: SizedBox(
                   height: 50,
                   width: 50,
