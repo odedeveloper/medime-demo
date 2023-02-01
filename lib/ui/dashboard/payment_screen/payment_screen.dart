@@ -12,7 +12,7 @@ class PaymentScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Center(
-          child: Text("Coming soon"),),)
+          child: Text("Coming soon !"),),)
               // body: Stack(
               //   alignment: Alignment.bottomCenter,
               //   children: [

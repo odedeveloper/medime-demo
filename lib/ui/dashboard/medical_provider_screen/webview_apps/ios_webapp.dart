@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:medical360_oth/ui/widgets/custom_text_button_widget.dart';
 import 'package:platform_device_id/platform_device_id.dart';
 import 'package:get/get.dart';
+import 'package:medical360_oth/exports.dart';
+
 
 class DigiHealthApp extends StatelessWidget {
   DigiHealthApp({super.key});
@@ -54,11 +57,34 @@ class DigiHealthApp extends StatelessWidget {
                     print(consoleMessage);
                   },
                 ),
-                TextButton(
-                  onPressed: (){
-                    Get.back();
-                  }, 
-                  child: const Text("Go back"))
+                Container(
+                  margin: EdgeInsets.only(bottom: 30),
+                  child: SizedBox(
+                    width: 200,
+                    child: ElevatedButton(
+                      onPressed: (){Get.back();},
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(kteal),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(kAppPadding),
+                        child: Text(
+                          "Go back",
+                          style: themeTextStyle(
+                            context: context,
+                            fsize: klargeFont(context),
+                            tColor: kwhite,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                // TextButton(
+                //   onPressed: (){
+                //     Get.back();
+                //   }, 
+                //   child: const Text("Go back"))
                 ]
               )
           ),
