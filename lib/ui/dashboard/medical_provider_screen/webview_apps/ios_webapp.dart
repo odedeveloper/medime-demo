@@ -71,32 +71,32 @@ class _DigiHealthAppState extends State<DigiHealthApp> {
             print(consoleMessage);
           },
         ),
-        if (isbackButonVisible)
-          Container(
-            margin: EdgeInsets.only(bottom: 30),
-            child: SizedBox(
-              width: 200,
-              child: ElevatedButton(
-                onPressed: () {
-                  Get.back();
-                },
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(kteal),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(kAppPadding),
-                  child: Text(
-                    "Go back",
-                    style: themeTextStyle(
-                      context: context,
-                      fsize: klargeFont(context),
-                      tColor: kwhite,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+        // if (isbackButonVisible)
+        //   Container(
+        //     margin: EdgeInsets.only(bottom: 30),
+        //     child: SizedBox(
+        //       width: 200,
+        //       child: ElevatedButton(
+        //         onPressed: () {
+        //           Get.back();
+        //         },
+        //         style: ButtonStyle(
+        //           backgroundColor: MaterialStateProperty.all<Color>(kteal),
+        //         ),
+        //         child: Padding(
+        //           padding: const EdgeInsets.all(kAppPadding),
+        //           child: Text(
+        //             "Go back",
+        //             style: themeTextStyle(
+        //               context: context,
+        //               fsize: klargeFont(context),
+        //               tColor: kwhite,
+        //             ),
+        //           ),
+        //         ),
+        //       ),
+        //     ),
+        //   ),
       ])),
     );
   }
