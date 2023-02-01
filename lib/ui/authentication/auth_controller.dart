@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/services.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:medical360_oth/exports.dart';
 
 class AuthController extends GetxController {
@@ -18,6 +19,9 @@ class AuthController extends GetxController {
   final RegExp _passwordRegExp = RegExp(
     r"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$",
   );
+
+  HeadlessInAppWebView? headlessWebView;
+  String url = "";
 
   @override
   void onInit() {
@@ -164,7 +168,8 @@ class AuthController extends GetxController {
           bool isUserValid = await apiRepositoryInterface.login(
               emaildata!, loginPasswordController.text);
           authLoader(false);
-          // await webLoginToOth(loginUsernameController.text, loginPasswordController.text);
+          // await webLoginToOth(
+          //     loginUsernameController.text, loginPasswordController.text);
           return isUserValid;
         } else {
           authLoader(false);
@@ -283,5 +288,26 @@ class AuthController extends GetxController {
 
       return false;
     }
+  }
+
+  webLoginToOth(String username, String password) async {
+    String source = "add($username,$password)";
+    await headlessWebView!.webViewController.evaluateJavascript(source: source);
+  }
+
+  getHeadlessView() async {
+    headlessWebView = HeadlessInAppWebView(
+        initialUrlRequest:
+            URLRequest(url: Uri.parse("https://ode-oth.web.app/#/login")),
+        onWebViewCreated: (controller) {},
+        onConsoleMessage: (controller, consoleMessage) {},
+        onLoadStart: (controller, url) async {
+          print(url);
+        },
+        onLoadStop: (controller, url) async {
+          controller.injectJavascriptFileFromAsset(
+              assetFilePath: 'assets/js/logging.js');
+        });
+    await headlessWebView?.run();
   }
 }

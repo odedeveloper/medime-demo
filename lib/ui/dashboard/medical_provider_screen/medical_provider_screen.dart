@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -124,12 +126,16 @@ class AppCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
-        if (app.isInstalled) {
-          await LaunchApp.openApp(
-              androidPackageName: app.packageName, openStore: false);
+        if (Platform.isIOS) {
+          Get.to(PaymentScreen());
         } else {
-          final controller = Get.find<AppsController>();
-          controller.downloadFile("${app.appName}.apk");
+          if (app.isInstalled) {
+            await LaunchApp.openApp(
+                androidPackageName: app.packageName, openStore: false);
+          } else {
+            final controller = Get.find<AppsController>();
+            controller.downloadFile("${app.appName}.apk");
+          }
         }
       },
       child: SizedBox(

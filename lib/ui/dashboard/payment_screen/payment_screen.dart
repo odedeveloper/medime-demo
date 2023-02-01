@@ -1,31 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:platform_device_id/platform_device_id.dart';
 
 class PaymentScreen extends StatelessWidget {
   PaymentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-    body:InAppWebView(
-            initialUrlRequest:URLRequest(url: Uri.parse("https://ode-oth.web.app/#/login")),
-                        onLoadStart: (controller, url) {
-                          print(url.toString());
-                        },
-                        onLoadStop: ((controller, url){
-                          controller.injectJavascriptFileFromAsset(assetFilePath: "assets/js/token.js");
-                        }),
-                        androidOnPermissionRequest: (controller, origin, resources) async {
-                          return PermissionRequestResponse(
-                              resources: resources,
-                              action: PermissionRequestResponseAction.GRANT);
-                        },
-                       
+    return const SafeArea(
+        child: Scaffold(
+            body: Center(
+      child: Text("Coming soon !"),
+    ))
 
-                        onConsoleMessage: (controller, consoleMessage) {
-                          print(consoleMessage);
-                        },
-                      )
-    );
+        //     InAppWebView(
+        //   initialOptions: InAppWebViewGroupOptions(
+        //       crossPlatform: InAppWebViewOptions(
+        //     cacheEnabled: true,
+        //     clearCache: false,
+        //     javaScriptEnabled: true,
+        //   )),
+        //   initialUrlRequest:
+        //       URLRequest(url: Uri.parse("https://ode-oth.web.app/#/login")),
+        //   onLoadStart: (controller, url) async {
+        //     String? deviceId = await PlatformDeviceId.getDeviceId;
+        //     await controller.injectJavascriptFileFromAsset(
+        //         assetFilePath: "assets/js/token.js");
+        //     String source = "device('$deviceId')";
+        //     controller.evaluateJavascript(source: source);
+        //   },
+        //   onLoadStop: ((controller, url) {}),
+        //   //   controller.injectJavascriptFileFromAsset(
+        //   //       assetFilePath: "assets/js/token.js");
+        //   //       String coding = "";
+        //   //       String source = "addToken($)";
+        //   //       controller.evaluateJavascript(source: source)
+        //   // }),
+        //   androidOnPermissionRequest: (controller, origin, resources) async {
+        //     return PermissionRequestResponse(
+        //         resources: resources,
+        //         action: PermissionRequestResponseAction.GRANT);
+        //   },
+        //   onConsoleMessage: (controller, consoleMessage) {
+        //     print(consoleMessage);
+        //   },
+        // )),
+        );
   }
 }

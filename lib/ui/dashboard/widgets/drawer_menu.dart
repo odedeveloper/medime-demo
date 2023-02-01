@@ -52,58 +52,58 @@ class DrawerMenu extends GetWidget<DashBoardController> {
                   onAddButtonTapped(0);
                 },
               ),
+              // DrawerButtons(
+              //   title: drawerMeasurements,
+              //   icon: Icons.health_and_safety,
+              //   pageIndex: 1,
+              //   onClicked: () {
+              //     if (!Responsive.isDesktop(context)) Navigator.pop(context);
+              //     onAddButtonTapped(1);
+              //   },
+              // ),
+              // DrawerButtons(
+              //   title: drawerHome,
+              //   pageIndex: 2,
+              //   icon: Icons.home_sharp,
+              //   onClicked: () {
+              //     if (!Responsive.isDesktop(context)) Navigator.pop(context);
+              //     onAddButtonTapped(2);
+              //   },
+              // ),
               DrawerButtons(
-                title: drawerMeasurements,
-                icon: Icons.health_and_safety,
+                title: drawerConsent,
+                icon: Icons.edit_note,
                 pageIndex: 1,
                 onClicked: () {
                   if (!Responsive.isDesktop(context)) Navigator.pop(context);
                   onAddButtonTapped(1);
                 },
               ),
+              // DrawerButtons(
+              //   title: drawerMedicalProvider,
+              //   icon: Icons.medication_liquid_sharp,
+              //   pageIndex: 4,
+              //   onClicked: () {
+              //     if (!Responsive.isDesktop(context)) Navigator.pop(context);
+              //     onAddButtonTapped(4);
+              //   },
+              // ),
               DrawerButtons(
-                title: drawerHome,
+                title: drawerRecords,
+                icon: Icons.recent_actors_rounded,
                 pageIndex: 2,
-                icon: Icons.home_sharp,
                 onClicked: () {
                   if (!Responsive.isDesktop(context)) Navigator.pop(context);
                   onAddButtonTapped(2);
                 },
               ),
               DrawerButtons(
-                title: drawerConsent,
-                icon: Icons.edit_note,
+                title: drawerPayment,
+                icon: Icons.wallet,
                 pageIndex: 3,
                 onClicked: () {
                   if (!Responsive.isDesktop(context)) Navigator.pop(context);
                   onAddButtonTapped(3);
-                },
-              ),
-              DrawerButtons(
-                title: drawerMedicalProvider,
-                icon: Icons.medication_liquid_sharp,
-                pageIndex: 4,
-                onClicked: () {
-                  if (!Responsive.isDesktop(context)) Navigator.pop(context);
-                  onAddButtonTapped(4);
-                },
-              ),
-              DrawerButtons(
-                title: drawerRecords,
-                icon: Icons.recent_actors_rounded,
-                pageIndex: 5,
-                onClicked: () {
-                  if (!Responsive.isDesktop(context)) Navigator.pop(context);
-                  onAddButtonTapped(5);
-                },
-              ),
-              DrawerButtons(
-                title: drawerPayment,
-                icon: Icons.wallet,
-                pageIndex: 6,
-                onClicked: () {
-                  if (!Responsive.isDesktop(context)) Navigator.pop(context);
-                  onAddButtonTapped(6);
                 },
               ),
               const SizedBox(height: 20),

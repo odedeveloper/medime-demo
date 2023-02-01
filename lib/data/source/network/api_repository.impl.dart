@@ -9,14 +9,16 @@ class ApiRepositoryImpl extends ApiRepositoryInterface {
   Future<ApiResults> getOTHToken(
       {required String username, required String password}) async {
     try {
-       String? deviceId = await PlatformDeviceId.getDeviceId;
+      String? deviceId = await PlatformDeviceId.getDeviceId;
       log(GetStorage().read("idToken"));
-      ApiResults apiResults = await DioInstance()
-          .postData(endPoint: getOTHTokenUrl, sendHeader: false, data: {
-        "username": username,
-        "password": password,
-        "deviceId": deviceId??""
-      });
+      ApiResults apiResults = await DioInstance().postData(
+          endPoint: getOTHTokenUrl,
+          sendHeader: false,
+          data: {
+            "username": username,
+            "password": password,
+            "deviceId": deviceId ?? ""
+          });
       return apiResults;
     } catch (e) {
       rethrow;
@@ -48,6 +50,8 @@ class ApiRepositoryImpl extends ApiRepositoryInterface {
         log("OTH token => ${apiResults2.data["token"]}");
         await LocalRepositoryImpl()
             .setOthToken(token: apiResults2.data["token"]);
+        await LocalRepositoryImpl()
+            .setRefreshToken(token: apiResults2.data["refreshToken"]);
       }
       return true;
     } on CognitoClientException catch (e) {

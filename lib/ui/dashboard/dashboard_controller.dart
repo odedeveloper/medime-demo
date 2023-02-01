@@ -10,13 +10,12 @@ class DashBoardController extends GetxController {
 
   List<Widget> dashboardScreens = [
     MedicalProviderScreen(),
-    const MeasurementsScreen(),
-    const HomeScreen(),
+    // const MeasurementsScreen(),
+    // const HomeScreen(),
     const ConsentScreen(),
-    const QuestionnairesScreen(),
+    // const QuestionnairesScreen(),
     const RecordScreen(),
     PaymentScreen(),
-
   ];
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

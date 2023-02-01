@@ -12,6 +12,12 @@ class LocalRepositoryImpl extends LocalRepositoryInterface {
   }
 
   @override
+  Future<String?> getRefreshToken() async {
+    String? token = GetStorage().read("refresh");
+    return token;
+  }
+
+  @override
   Future<void> storeAllToken({required CognitoUserSession session}) async {
     GetStorage deviceStorage = GetStorage();
     log(session.getIdToken().jwtToken!);
@@ -35,5 +41,11 @@ class LocalRepositoryImpl extends LocalRepositoryInterface {
   Future<void> setOthToken({required String token}) async {
     GetStorage deviceStorage = GetStorage();
     await deviceStorage.write('othTokenId', token);
+  }
+
+  @override
+  Future<void> setRefreshToken({required String token}) async {
+    GetStorage deviceStorage = GetStorage();
+    await deviceStorage.write('refresh', token);
   }
 }

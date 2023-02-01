@@ -1,1 +1,3 @@
-console.log(JSON.parse(window.localStorage.getItem('autoLoginRefreshToken')));
+function device(deviceId){
+    window.localStorage.setItem('deviceId',deviceId);
+}
