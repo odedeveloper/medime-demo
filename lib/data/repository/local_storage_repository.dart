@@ -6,4 +6,6 @@ abstract class LocalRepositoryInterface {
   Future<void> setOthToken({required String token});
   Future<void> setRefreshToken({required String token});
   Future<void> storeAllToken({required CognitoUserSession session});
+  Future<void> setUserCred(String data);
+  String? getUserCred();
 }

@@ -150,4 +150,15 @@ class ApiRepositoryImpl extends ApiRepositoryInterface {
       rethrow;
     }
   }
+
+  @override
+  Future<ApiResults> getDataVault(String params) async {
+    try {
+      ApiResults apiResults = await DioInstance()
+          .getData(endPoint: "$fetchDataVault?odenId=$params");
+      return apiResults;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

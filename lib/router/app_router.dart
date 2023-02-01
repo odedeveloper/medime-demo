@@ -1,4 +1,5 @@
 import 'package:medical360_oth/exports.dart';
+import 'package:medical360_oth/ui/dashboard/data_vault_screen/data_vault_binding.dart';
 import 'package:medical360_oth/ui/dashboard/medical_provider_screen/apps_binding.dart';
 
 class AppRoutes {
@@ -35,6 +36,7 @@ class AppPages {
         MeasurementsBinding(),
         QuestionariesBinding(),
         AppsBinding(),
+        DataVaultBinding(),
       ],
     ),
     // GetPage(

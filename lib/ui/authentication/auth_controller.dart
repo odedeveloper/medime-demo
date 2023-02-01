@@ -24,12 +24,6 @@ class AuthController extends GetxController {
   String url = "";
 
   @override
-  void onInit() {
-    super.onInit();
-    // getHeadlessView();
-  }
-
-  @override
   void dispose() {
     _debounce?.cancel();
     // headlessWebView?.dispose();
@@ -157,6 +151,7 @@ class AuthController extends GetxController {
       String? emaildata;
       ApiResults result = await apiRepositoryInterface
           .getPrimaryCall(loginUsernameController.text);
+      localRepositoryInterface.setUserCred(loginUsernameController.text);
       if (result is ApiSuccess) {
         if (result.data["status"] == "success") {
           emaildata = result.data["username"];
@@ -256,6 +251,7 @@ class AuthController extends GetxController {
       newPassword: signUpConfirmPasswordController.text,
       oldPassword: signUpUniqueCodeController.text,
     );
+    localRepositoryInterface.setUserCred(signUpUsernameController.text);
 
     if (result is ApiSuccess) {
       if (result.data["status"] == "success") {

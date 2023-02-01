@@ -1,4 +1,3 @@
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medical360_oth/exports.dart';
 
 class DrawerMenu extends GetWidget<DashBoardController> {
@@ -106,8 +105,17 @@ class DrawerMenu extends GetWidget<DashBoardController> {
                   onAddButtonTapped(3);
                 },
               ),
+              DrawerButtons(
+                title: dataVaultTitle,
+                icon: Icons.supervised_user_circle_outlined,
+                pageIndex: 4,
+                onClicked: () {
+                  if (!Responsive.isDesktop(context)) Navigator.pop(context);
+                  onAddButtonTapped(4);
+                },
+              ),
               const SizedBox(height: 20),
-              Spacer(),
+              const Spacer(),
               // CircleAvatar(
               //   radius: height(context)! * 0.08,
               //   backgroundColor: kbottomBoxColor,

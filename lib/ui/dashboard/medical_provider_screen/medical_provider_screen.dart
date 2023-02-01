@@ -1,17 +1,13 @@
 import 'dart:io';
 
 import 'package:external_app_launcher/external_app_launcher.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:medical360_oth/exports.dart';
 import 'package:medical360_oth/models/app_models.dart';
 import 'package:medical360_oth/ui/dashboard/medical_provider_screen/apps_controller.dart';
 import 'package:medical360_oth/ui/dashboard/medical_provider_screen/webview_apps/ios_webapp.dart';
-import 'package:medical360_oth/utils/constant.dart';
 
 class MedicalProviderScreen extends GetWidget<AppsController> {
-  MedicalProviderScreen({super.key});
+  const MedicalProviderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +26,7 @@ class MedicalProviderScreen extends GetWidget<AppsController> {
             child: SingleChildScrollView(
               child: GetBuilder<AppsController>(builder: (controller) {
                 if (controller.isLoading) {
-                  return SizedBox(
+                  return const SizedBox(
                       height: 20,
                       width: 20,
                       child: CircularProgressIndicator(color: kteal));
@@ -90,7 +86,7 @@ class AppGrid extends StatelessWidget {
                 Tooltip(
                   message: 'Info',
                   child: IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.info_outline,
                       color: kdarkTeal,
                     ),
@@ -143,7 +139,7 @@ class AppCard extends StatelessWidget {
         child: Column(
           children: [
             Opacity(
-              opacity: (app.isInstalled || Platform.isIOS)? 1 : 0.4,
+              opacity: (app.isInstalled || Platform.isIOS) ? 1 : 0.4,
               child: SizedBox(
                   height: 50,
                   width: 50,

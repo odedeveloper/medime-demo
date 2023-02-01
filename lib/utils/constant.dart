@@ -51,7 +51,7 @@ const String drawerPayment = "Payment";
 const String drawerMeasurements = "Measurements";
 const String drawerQuestionnaires = "Questionnaires";
 const String drawerApps = "MedicalCare";
-
+const String dataVaultTitle = "Data Vault";
 const String appTitle = "MediMe";
 const String documents = "Documents";
 const String dataShared = "Data Shared";

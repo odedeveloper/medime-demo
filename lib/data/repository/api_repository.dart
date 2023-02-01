@@ -24,4 +24,6 @@ abstract class ApiRepositoryInterface {
   Future<ApiResults> getQuestionnariesList();
 
   Future<ApiResults> getQuestionaries({required String url});
+
+  Future<ApiResults> getDataVault(String params);
 }

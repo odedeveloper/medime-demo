@@ -5,6 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:medical360_oth/data/repository/local_storage_repository.dart';
 
 class LocalRepositoryImpl extends LocalRepositoryInterface {
+  GetStorage deviceStorage = GetStorage();
   @override
   Future<String?> getToken() async {
     String? token = GetStorage().read("idToken");
@@ -19,7 +20,6 @@ class LocalRepositoryImpl extends LocalRepositoryInterface {
 
   @override
   Future<void> storeAllToken({required CognitoUserSession session}) async {
-    GetStorage deviceStorage = GetStorage();
     log(session.getIdToken().jwtToken!);
     await deviceStorage.write("idToken", session.getIdToken().jwtToken);
     await deviceStorage.write(
@@ -39,13 +39,21 @@ class LocalRepositoryImpl extends LocalRepositoryInterface {
 
   @override
   Future<void> setOthToken({required String token}) async {
-    GetStorage deviceStorage = GetStorage();
     await deviceStorage.write('othTokenId', token);
   }
 
   @override
   Future<void> setRefreshToken({required String token}) async {
-    GetStorage deviceStorage = GetStorage();
     await deviceStorage.write('refresh', token);
+  }
+
+  @override
+  String? getUserCred() {
+    return deviceStorage.read('userCred');
+  }
+
+  @override
+  Future<void> setUserCred(String data) async {
+    await deviceStorage.write('userCred', data);
   }
 }

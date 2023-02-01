@@ -15,3 +15,4 @@ const String fetchMeasurmentTypes = "oth/patient/fetchMeasurmentTypes";
 const String fetchMeasurment = "oth/patient/fetchMeasurments";
 const String fetchQuestionnaireList = "oth/patient/questionnaireList";
 const String fetchQuestionnaire = "oth/patient/questionnaire";
+const String fetchDataVault = "consumer/getConsentHistory";
