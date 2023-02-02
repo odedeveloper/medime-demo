@@ -76,11 +76,33 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
 
   Widget userVault(String label, String data) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(
-        "$label : $data",
-        maxLines: 2,
-        style: themeTextStyle(context: context),
+      padding: const EdgeInsets.all(0.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            //width: MediaQuery.of(context).size.width * 0.45,
+            width: 191,
+            height: MediaQuery.of(context).size.height * 0.05,
+            color: Colors.blueGrey.shade200,
+            child: Text(
+              label,
+              maxLines: 2,
+              style: themeTextStyle(context: context),
+            ),
+          ),
+          Container(
+            //width: MediaQuery.of(context).size.width * 0.45,
+            width: 200,
+            height: MediaQuery.of(context).size.height * 0.05,
+            color: Colors.blueGrey.shade100,
+            child: Text(
+              data,
+              maxLines: 2,
+              style: themeTextStyle(context: context),
+            ),
+          ),
+        ],
       ),
     );
   }
