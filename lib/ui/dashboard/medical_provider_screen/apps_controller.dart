@@ -26,22 +26,22 @@ class AppsController extends GetxController {
   List<ClientApps> allClientApps = [];
   List originalListApps = [
     ClientApps(
-        isInstalled: false,
+        isInstalled: true,
         packageName: "dk.silverbullet.telemed",
         appName: "DigiHealth",
         logo: tele1),
     ClientApps(
-        isInstalled: false,
+        isInstalled: true,
         packageName: "silverbullet.telemed",
         appName: "QuickConsult",
         logo: tele2),
     ClientApps(
-        isInstalled: false,
+        isInstalled: true,
         packageName: "silverbullet.telemed",
         appName: "Rehealth",
         logo: tele3),
     ClientApps(
-        isInstalled: false,
+        isInstalled: true,
         packageName: "silverbullet.telemed",
         appName: "Tracker",
         logo: tele3),
@@ -49,31 +49,31 @@ class AppsController extends GetxController {
         isInstalled: true,
         packageName: "dk.silverbullet.telemed",
         appName: "DigiPharma",
-        appType: AppType.MedicalPharma,
+        appType: AppType.Medical_Pharma,
         logo: pharmacy1),
     ClientApps(
         isInstalled: true,
         packageName: "dk.silverbullet.telemed",
         appName: "PharmaOne",
-        appType: AppType.MedicalPharma,
+        appType: AppType.Medical_Pharma,
         logo: pharmacy2),
     ClientApps(
         isInstalled: true,
         packageName: "silverbullet.telemed",
         appName: "DigiRecords",
-        appType: AppType.Medicalcords,
+        appType: AppType.Medical_Records,
         logo: record1),
     ClientApps(
         isInstalled: true,
         packageName: "silverbullet.telemed",
         appName: "DigiInsure",
-        appType: AppType.MedicalInsurance,
+        appType: AppType.Medical_Insurance,
         logo: insurance1),
     ClientApps(
-        isInstalled: false,
+        isInstalled: true,
         packageName: "silverbullet.telemed",
         appName: "FamilyInsure",
-        appType: AppType.MedicalInsurance,
+        appType: AppType.Medical_Insurance,
         logo: insurance2),
   ];
 

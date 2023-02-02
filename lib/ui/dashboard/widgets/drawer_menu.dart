@@ -141,7 +141,7 @@ class DrawerMenu extends GetWidget<DashBoardController> {
                     style: themeTextStyle(
                       context: context,
                       tColor: kdarkTeal,
-                      fontFamily: "Raleway",
+                      fontFamily: "Quicksand",
                       fweight: FontWeight.w500,
                       letterSpacing: 1.2,
                     ),

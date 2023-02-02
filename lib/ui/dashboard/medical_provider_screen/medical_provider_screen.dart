@@ -63,23 +63,25 @@ class AppGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.all(8),
         margin: const EdgeInsets.only(bottom: 20),
-        decoration: BoxDecoration(boxShadow: const [
-          BoxShadow(
-            spreadRadius: 3,
-            blurRadius: 3,
-            color: Color.fromARGB(255, 223, 238, 222),
-          )
-        ], color: Colors.white, borderRadius: BorderRadius.circular(10)),
+        decoration: BoxDecoration(
+            boxShadow: const [
+              BoxShadow(
+                spreadRadius: 1,
+                blurRadius: 2,
+                color: Color.fromARGB(255, 223, 238, 222),
+              )
+            ],
+            color: Color.fromARGB(255, 255, 255, 255),
+            borderRadius: BorderRadius.circular(10)),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(
-            padding: const EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  appCategory.split(".")[1],
+                  appCategory.split(".")[1].split("_").join(" "),
                   style: themeTextStyle(
                       fweight: FontWeight.w600, context: context),
                 ),
@@ -99,6 +101,9 @@ class AppGrid extends StatelessWidget {
           SizedBox(
             height: 92.0 * (apps.length / 4).ceil(),
             child: GridView.builder(
+              physics: new NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              primary: true,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4,
                 mainAxisSpacing: 0,
@@ -136,6 +141,7 @@ class AppCard extends StatelessWidget {
         }
       },
       child: SizedBox(
+        width: 80,
         child: Column(
           children: [
             Opacity(
@@ -156,7 +162,7 @@ class AppCard extends StatelessWidget {
               app.appName,
               style: themeTextStyle(
                 context: context,
-                fsize: 12,
+                fsize: 11,
                 fweight: FontWeight.w500,
               ),
             ),
