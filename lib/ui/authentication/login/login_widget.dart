@@ -151,6 +151,7 @@ class LoginWidget extends GetWidget<AuthController> {
                       context: context,
                       fweight: FontWeight.bold,
                       letterSpacing: 1.2,
+                      fsize: 10,
                       tColor: kteal,
                     ),
                   ),

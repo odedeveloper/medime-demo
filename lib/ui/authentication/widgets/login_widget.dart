@@ -10,7 +10,7 @@ class LoginWidget extends GetWidget<AuthController> {
     return Container(
       margin: EdgeInsets.symmetric(
         horizontal:
-            Responsive.isDesktop(context) ? kAppPadding * 18 : kAppPadding * 2,
+            Responsive.isDesktop(context) ? kAppPadding * 18 : kAppPadding * 1,
       ),
       child: Center(
         child: SingleChildScrollView(
@@ -56,7 +56,7 @@ class LoginWidget extends GetWidget<AuthController> {
                   ],
                 ),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
               Text(
                 "Username",
                 style: themeTextStyle(
