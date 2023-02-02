@@ -63,7 +63,6 @@ class AppGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.all(8),
         margin: const EdgeInsets.only(bottom: 20),
         decoration: BoxDecoration(boxShadow: const [
           BoxShadow(
@@ -74,12 +73,12 @@ class AppGrid extends StatelessWidget {
         ], color: Colors.white, borderRadius: BorderRadius.circular(10)),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(
-            padding: const EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  appCategory.split(".")[1],
+                  appCategory.split(".")[1].split("_").join(" "),
                   style: themeTextStyle(
                       fweight: FontWeight.w600, context: context),
                 ),
@@ -136,6 +135,7 @@ class AppCard extends StatelessWidget {
         }
       },
       child: SizedBox(
+        width: 80,
         child: Column(
           children: [
             Opacity(
@@ -156,7 +156,7 @@ class AppCard extends StatelessWidget {
               app.appName,
               style: themeTextStyle(
                 context: context,
-                fsize: 12,
+                fsize: 11,
                 fweight: FontWeight.w500,
               ),
             ),

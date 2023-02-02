@@ -52,7 +52,7 @@ const String drawerMeasurements = "Measurements";
 const String drawerQuestionnaires = "Questionnaires";
 const String drawerApps = "MedicalCare";
 const String dataVaultTitle = "Data Vault";
-const String appTitle = "MediMe";
+const String appTitle = "MediMine";
 const String documents = "Documents";
 const String dataShared = "Data Shared";
 const String history = "History";
@@ -66,7 +66,7 @@ const String appsSubTitle =
     "Here you can access all the integrated apps , as well download them.";
 const String addProviders = "Add New Providers";
 const String currentProviders = "Current Providers";
-const String splashText = "MediMe";
+const String splashText = "MediMine";
 
 const String enterPassword = "Please enter password.";
 const String enterEmailProceed = "Please enter Username/Email to proceed.";

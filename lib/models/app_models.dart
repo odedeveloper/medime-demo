@@ -1,7 +1,12 @@
 import 'package:medical360_oth/exports.dart';
 
 // ignore: constant_identifier_names
-enum AppType { MedicalHealth, MedicalPharma, Medicalcords, MedicalInsurance }
+enum AppType {
+  Medical_Health,
+  Medical_Pharma,
+  Medical_Records,
+  Medical_Insurance
+}
 
 class ClientApps {
   bool isInstalled = false;
@@ -15,5 +20,5 @@ class ClientApps {
       this.packageName = "",
       this.appName = "",
       this.logo = appLogo,
-      this.appType = AppType.MedicalHealth});
+      this.appType = AppType.Medical_Health});
 }
