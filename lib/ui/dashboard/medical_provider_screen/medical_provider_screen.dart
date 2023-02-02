@@ -64,13 +64,16 @@ class AppGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: const EdgeInsets.only(bottom: 20),
-        decoration: BoxDecoration(boxShadow: const [
-          BoxShadow(
-            spreadRadius: 3,
-            blurRadius: 3,
-            color: Color.fromARGB(255, 223, 238, 222),
-          )
-        ], color: Colors.white, borderRadius: BorderRadius.circular(10)),
+        decoration: BoxDecoration(
+            boxShadow: const [
+              BoxShadow(
+                spreadRadius: 1,
+                blurRadius: 2,
+                color: Color.fromARGB(255, 223, 238, 222),
+              )
+            ],
+            color: Color.fromARGB(255, 255, 255, 255),
+            borderRadius: BorderRadius.circular(10)),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(
             padding: const EdgeInsets.only(left: 10),
@@ -98,6 +101,9 @@ class AppGrid extends StatelessWidget {
           SizedBox(
             height: 92.0 * (apps.length / 4).ceil(),
             child: GridView.builder(
+              physics: new NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              primary: true,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4,
                 mainAxisSpacing: 0,
