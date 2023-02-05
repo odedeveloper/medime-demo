@@ -33,18 +33,18 @@ class AppsController extends GetxController {
     ClientApps(
         isInstalled: true,
         packageName: "silverbullet.telemed",
-        appName: "QuickConsult",
+        appName: "Consult",
         logo: tele2),
     ClientApps(
         isInstalled: true,
         packageName: "silverbullet.telemed",
-        appName: "Rehealth",
+        appName: "ReHealth",
         logo: tele3),
     ClientApps(
         isInstalled: true,
         packageName: "silverbullet.telemed",
-        appName: "Tracker",
-        logo: tele3),
+        appName: "DocOne",
+        logo: tele4),
     ClientApps(
         isInstalled: true,
         packageName: "dk.silverbullet.telemed",
@@ -72,7 +72,7 @@ class AppsController extends GetxController {
     ClientApps(
         isInstalled: true,
         packageName: "silverbullet.telemed",
-        appName: "FamilyInsure",
+        appName: "TeleInsure",
         appType: AppType.Medical_Insurance,
         logo: insurance2),
   ];

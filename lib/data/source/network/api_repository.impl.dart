@@ -17,7 +17,7 @@ class ApiRepositoryImpl extends ApiRepositoryInterface {
           data: {
             "username": username,
             "password": password,
-            "deviceId": deviceId ?? ""
+            "deviceId": "123"
           });
       return apiResults;
     } catch (e) {
